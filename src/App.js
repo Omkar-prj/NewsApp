@@ -5,11 +5,7 @@ import React, { Component } from 'react'
 
 import Navbar from './componets/Navbar';
 import News from './componets/News';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 
 export default class App extends Component {
@@ -19,7 +15,7 @@ export default class App extends Component {
 
     return (
       <div>
-        {/* <Router>
+        <Router>
         <Navbar/>
        
         <Routes>
@@ -33,20 +29,8 @@ export default class App extends Component {
             <Route path="/technology" element={<News key="technology" pageSize={this.pageSize} country="in" category="technology" />} />
         
         </Routes>
-        </Router> */}
-          <Router basename="/"> 
-            <Navbar />
-            <Routes>
-                <Route path="/" element={<News key="general" pageSize={10} country="in" category="general" />} />
-                <Route path="/business" element={<News key="business" pageSize={10} country="in" category="business" />} />
-                <Route path="/entertainment" element={<News key="entertainment" pageSize={10} country="in" category="entertainment" />} />
-                <Route path="/general" element={<News key="general" pageSize={10} country="in" category="general" />} />
-                <Route path="/health" element={<News key="health" pageSize={10} country="in" category="health" />} />
-                <Route path="/science" element={<News key="science" pageSize={10} country="in" category="science" />} />
-                <Route path="/sports" element={<News key="sports" pageSize={10} country="in" category="sports" />} />
-                <Route path="/technology" element={<News key="technology" pageSize={10} country="in" category="technology" />} />
-            </Routes>
         </Router>
+          
       </div>
     )
   }
